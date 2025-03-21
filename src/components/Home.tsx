@@ -6,13 +6,7 @@ import PieGrid from "./PieGrid";
 import "./Home.css";
 
 const Home: React.FC = () => {
-  const carbonFootprintData = [
-    { name: "Recycling", value: 5.8, color: "#6c757d" },
-    { name: "Distribution", value: 7.3, color: "#ffc107" },
-    { name: "Main Production", value: 21.9, color: "#dc3545" },
-    { name: "Raw Material Extraction", value: 65, color: "#28a745" },
-  ];
-
+  
   return (
     <section className="home">
       {/* Battery Passport Section */}

@@ -1,12 +1,6 @@
 import React from "react";
 // import "./CircularityContent.css";
 import PieChartComponent2 from "../components/PieChartComponent2";
-const carbonFootprintData = [
-  { name: "Recycling", value: 5.8, color: "#6c757d" },
-  { name: "Distribution", value: 7.3, color: "#ffc107" },
-  { name: "Main Production", value: 21.9, color: "#dc3545" },
-  { name: "Raw Material Extraction", value: 65, color: "#28a745" },
-];
 
 const nickelData = [
   { name: "Post Consumer Share", value: 7, color: "#28a745" },
