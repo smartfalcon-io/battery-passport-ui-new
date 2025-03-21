@@ -1,0 +1,23 @@
+.general h2 {
+    font-size: 15px;
+    color: black;
+}
+
+.general p {
+    font-size: 15px;
+}
+
+.header {
+    margin-bottom: 10px;
+}
+
+.general-grid h4{
+    font-weight: bold;
+    font-size: 15px;
+    color: rgba(128, 128, 128, 0.678);
+}
+
+.general-grid p {
+    font-size: 17px;
+    font-weight: bold;
+}

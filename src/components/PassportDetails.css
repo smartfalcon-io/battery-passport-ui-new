@@ -9,7 +9,7 @@
   .first-section{
     width: 100%; /* Take full width of parent */
     box-sizing: border-box;
-    background-color: gray;
+    /* background-color: gray; */
     background-position: center;
     background-size: cover;
     width: 100%; 
@@ -26,6 +26,7 @@
   .passport-card {
     /* background-color: red; */
     border: 1px rgb(224, 217, 217) solid;
+    
     /* justify-content: center; */
     margin-bottom: 100px;
     margin-top: 50px;
@@ -81,12 +82,22 @@
     background-size: cover;
     width: 100%; 
     padding: 200px;
-    margin-top: -150px;
+    margin-top: -200px;
   }
 
   .back {
     color: gray;
-    font-size: 15px;
+    font-size: 17px;
+  }
+
+  .back:hover {
+    color: #4CAF50;
+  }
+
+  .back span {
+  content: "\2190";
+  font-size: 35px;
+  font-weight: bold;
   }
   
   .tabs-container {
@@ -115,6 +126,7 @@
     font-size: 16px;
     transition: background-color 0.3s ease, color 0.3s ease;
     width: 100%;
+    /* font-weight: bold; */
     color: #4CAF50;
   }
   
@@ -125,7 +137,7 @@
   }
   
   .tab-button.active {
-    background-color: #008080;
+    background-color: #4CAF50;
     color: white;
   }
   

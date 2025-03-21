@@ -1,13 +1,17 @@
 // GeneralContent.tsx
 import React from "react";
+import "./GeneralContent.css";
 
 const GeneralContent: React.FC = () => {
   return (
-    <div>
-      <h2>General</h2>
-      <p>Generic information about the battery</p>
+    <div className="general">
+      <div className="header">
+        <h2>General</h2>
+        <p>Generic information about the battery</p>
+      </div>
       <hr />
       <div
+        className="general-grid"
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(4, 1fr)",
@@ -16,15 +20,15 @@ const GeneralContent: React.FC = () => {
         }}
       >
         <div>
-          <strong>Name</strong>
+          <h4>Name</h4>
           <p>EV-BAT095</p>
         </div>
         <div>
-          <strong>Manufactured date</strong>
+          <h4>Manufactured date</h4>
           <p>2023-09-05</p>
         </div>
         <div>
-          <strong>Facility ID</strong>
+          <h4>Facility ID</h4>
           <p>
             Berlin{" "}
             <span role="img" aria-label="location">
@@ -33,15 +37,15 @@ const GeneralContent: React.FC = () => {
           </p>
         </div>
         <div>
-          <strong>Manufactured by</strong>
+          <h4>Manufactured by</h4>
           <p>Exide Batteries Auditor</p>
         </div>
         <div>
-          <strong>Category</strong>
+          <h4>Category</h4>
           <p>EV</p>
         </div>
         <div>
-          <strong>Status</strong>
+          <h4>Status</h4>
           <p>
             <span
               style={{
@@ -57,7 +61,7 @@ const GeneralContent: React.FC = () => {
           </p>
         </div>
         <div>
-          <strong>Weight</strong>
+          <h4>Weight</h4>
           <p>499.00kg</p>
         </div>
       </div>

@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PieChartComponent from "../components/PieChartComponent";
-import PieChartComponent2 from "../components/PieChartComponent2";
+import PieGrid from "./PieGrid";
+
 import "./Home.css";
 
 const Home: React.FC = () => {
@@ -10,30 +11,6 @@ const Home: React.FC = () => {
     { name: "Distribution", value: 7.3, color: "#ffc107" },
     { name: "Main Production", value: 21.9, color: "#dc3545" },
     { name: "Raw Material Extraction", value: 65, color: "#28a745" },
-  ];
-
-  const nickelData = [
-    { name: "Post Consumer Share", value: 7, color: "#28a745" },
-    { name: "Pre Consumer Share", value: 17, color: "#2C3E50" },
-    { name: "Primary Material", value: 76, color: "#BDC3C7" },
-  ];
-
-  const cobaltData = [
-    { name: "Post Consumer Share", value: 9, color: "#28a745" },
-    { name: "Pre Consumer Share", value: 10, color: "#2C3E50" },
-    { name: "Primary Material", value: 81, color: "#BDC3C7" },
-  ];
-
-  const lithiumData = [
-    { name: "Post Consumer Share", value: 10, color: "#28a745" },
-    { name: "Pre Consumer Share", value: 14, color: "#2C3E50" },
-    { name: "Primary Material", value: 76, color: "#BDC3C7" },
-  ];
-
-  const leadData = [
-    { name: "Post Consumer Share", value: 6, color: "#28a745" },
-    { name: "Pre Consumer Share", value: 11, color: "#2C3E50" },
-    { name: "Primary Material", value: 83, color: "#BDC3C7" },
   ];
 
   return (
@@ -111,33 +88,6 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      {/* Summary Report Section (Wrapped inside .card for consistent styling) */}
-      {/* <div className="card">
-        <div className="content-container">
-          <section className="piecharts">
-            <div className="summary-report">
-              <h2>SUMMARY REPORT</h2>
-              <div className="charts-container">
-                <PieChartComponent
-                  title="Carbon Footprint"
-                  data={carbonFootprintData}
-                />
-              </div>
-              <h3>
-                Recycled Content Share{" "}
-                <span className="unverified-badge">Unverified</span>
-              </h3>
-              <div className="charts-container">
-                <PieChartComponent title="Nickel" data={nickelData} />
-                <PieChartComponent title="Cobalt" data={cobaltData} />
-                <PieChartComponent title="Lithium" data={lithiumData} />
-                <PieChartComponent title="Lead" data={leadData} />
-              </div>
-            </div>
-          </section>
-        </div>
-      </div> */}
-
       <section className="piechart">
         <div className="piechart-div">
           <div className="piechart-card">
@@ -148,29 +98,15 @@ const Home: React.FC = () => {
               <hr className="hr" />
               <h4>Original Power</h4>
               <br />
-              <h4>Carbon Footprint</h4>
-              <div className="charts-container">
-                <PieChartComponent title="" data={carbonFootprintData} />
+              <div className="carbonfootprint">
+                <PieChartComponent />
               </div>
-              <h3 className="recycle">
+              {/* <h3 className="recycle">
                 Recycled Content Share{" "}
                 <span className="unverified-badge">Unverified</span>
-              </h3>
+              </h3> */}
             </div>
-            <div className="pie-grid">
-              <div className="pie-item">
-                <PieChartComponent2 title="NICKEL" data={nickelData} />
-              </div>
-              <div className="pie-item">
-                <PieChartComponent2 title="COBALT" data={cobaltData} />
-              </div>
-              <div className="pie-item">
-                <PieChartComponent2 title="LITHIUM" data={lithiumData} />
-              </div>
-              <div className="pie-item">
-                <PieChartComponent2 title="LEAD" data={leadData} />
-              </div>
-            </div>
+            <PieGrid />
           </div>
         </div>
       </section>

@@ -14,7 +14,6 @@
 //   data: { name: string; value: number; color: string }[];
 // }
 
-// // Custom label function to keep labels always visible
 // const renderCustomizedLabel = ({
 //   cx,
 //   cy,
@@ -37,9 +36,7 @@
 //       dominantBaseline="central"
 //       fontSize="12px"
 //       fontWeight="bold"
-//       style={{
-//         pointerEvents: "none", // Prevents hover effect on text
-//       }}
+//       style={{ pointerEvents: "none" }}
 //     >
 //       {`${(percent * 100).toFixed(1)}%`}
 //     </text>
@@ -48,6 +45,11 @@
 
 // const PieChartComponent: React.FC<PieChartProps> = ({ title, data }) => {
 //   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+//   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+//   const handleClick = (index: number) => {
+//     setSelectedIndex(selectedIndex === index ? null : index);
+//   };
 
 //   return (
 //     <div className="pie-chart-container">
@@ -63,17 +65,20 @@
 //             outerRadius={100}
 //             label={renderCustomizedLabel}
 //             labelLine={false}
-//             isAnimationActive={false} // Prevents default hover animation
+//             isAnimationActive={false} // Enables animation
+//             animationDuration={800} // Sets animation duration
 //             onMouseEnter={(_, index) => setHoveredIndex(index)}
 //             onMouseLeave={() => setHoveredIndex(null)}
+//             onClick={(_, index) => handleClick(index)}
 //           >
 //             {data.map((entry, index) => (
 //               <Cell
 //                 key={`cell-${index}`}
 //                 fill={entry.color}
-//                 fillOpacity={hoveredIndex === index ? 0.5 : 1} // Dimming effect
+//                 fillOpacity={hoveredIndex === index ? 0.5 : 1}
 //                 style={{
-//                   transition: "fill-opacity 0.3s ease-in-out",
+//                   transition: "fill-opacity 0.3s ease-in-out, transform 0.3s ease-in-out",
+//                   transform: selectedIndex === index ? "translate(5px, -5px)" : "translate(0, 0)"
 //                 }}
 //               />
 //             ))}
@@ -82,8 +87,7 @@
 //           <Tooltip
 //             content={({ active, payload }) => {
 //               if (active && payload && payload.length) {
-//                 const backgroundColor = payload[0].payload.color; // Get color from data
-
+//                 const backgroundColor = payload[0].payload.color;
 //                 return (
 //                   <div className="custom-tooltip" style={{ backgroundColor }}>
 //                     <p className="tooltip-title">{payload[0].name}</p>
@@ -97,11 +101,7 @@
 //           <Legend
 //             verticalAlign="bottom"
 //             align="center"
-//             wrapperStyle={{
-//               marginBottom: "-30px",
-//               fontSize: "11px",
-//               lineHeight: "1",
-//             }}
+//             wrapperStyle={{ marginBottom: "-30px", fontSize: "11px", lineHeight: "1" }}
 //           />
 //         </PieChart>
 //       </ResponsiveContainer>
@@ -122,10 +122,12 @@ import {
 } from "recharts";
 import "./PieChartComponent.css";
 
-interface PieChartProps {
-  title: string;
-  data: { name: string; value: number; color: string }[];
-}
+const carbonFootprintData = [
+  { name: "Recycling", value: 5.8, color: "#6c757d" },
+  { name: "Distribution", value: 7.3, color: "#ffc107" },
+  { name: "Main Production", value: 21.9, color: "#dc3545" },
+  { name: "Raw Material Extraction", value: 65, color: "#28a745" },
+];
 
 const renderCustomizedLabel = ({
   cx,
@@ -156,7 +158,7 @@ const renderCustomizedLabel = ({
   );
 };
 
-const PieChartComponent: React.FC<PieChartProps> = ({ title, data }) => {
+const PieChartComponent: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
@@ -166,11 +168,11 @@ const PieChartComponent: React.FC<PieChartProps> = ({ title, data }) => {
 
   return (
     <div className="pie-chart-container">
-      <h3>{title}</h3>
+      <h3>Carbon Footprint</h3> {/* Hardcoded title */}
       <ResponsiveContainer width={300} height={250}>
         <PieChart>
           <Pie
-            data={data}
+            data={carbonFootprintData}
             dataKey="value"
             nameKey="name"
             cx="50%"
@@ -178,20 +180,24 @@ const PieChartComponent: React.FC<PieChartProps> = ({ title, data }) => {
             outerRadius={100}
             label={renderCustomizedLabel}
             labelLine={false}
-            isAnimationActive={false} // Enables animation
-            animationDuration={800} // Sets animation duration
+            isAnimationActive={false}
+            animationDuration={800}
             onMouseEnter={(_, index) => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
             onClick={(_, index) => handleClick(index)}
           >
-            {data.map((entry, index) => (
+            {carbonFootprintData.map((entry, index) => (
               <Cell
                 key={`cell-${index}`}
                 fill={entry.color}
                 fillOpacity={hoveredIndex === index ? 0.5 : 1}
                 style={{
-                  transition: "fill-opacity 0.3s ease-in-out, transform 0.3s ease-in-out",
-                  transform: selectedIndex === index ? "translate(5px, -5px)" : "translate(0, 0)"
+                  transition:
+                    "fill-opacity 0.3s ease-in-out, transform 0.3s ease-in-out",
+                  transform:
+                    selectedIndex === index
+                      ? "translate(5px, -5px)"
+                      : "translate(0, 0)",
                 }}
               />
             ))}
@@ -214,7 +220,11 @@ const PieChartComponent: React.FC<PieChartProps> = ({ title, data }) => {
           <Legend
             verticalAlign="bottom"
             align="center"
-            wrapperStyle={{ marginBottom: "-30px", fontSize: "11px", lineHeight: "1" }}
+            wrapperStyle={{
+              marginBottom: "-30px",
+              fontSize: "11px",
+              lineHeight: "1",
+            }}
           />
         </PieChart>
       </ResponsiveContainer>
@@ -223,3 +233,4 @@ const PieChartComponent: React.FC<PieChartProps> = ({ title, data }) => {
 };
 
 export default PieChartComponent;
+  

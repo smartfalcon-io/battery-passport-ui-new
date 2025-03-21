@@ -1,0 +1,48 @@
+.compliance-details {
+  display: grid;
+  grid-template-columns: 0.3fr 0.3fr;
+  /* gap: 20px; */
+}
+
+.compliance-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.compliance-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.compliance-link {
+  color: #4CAF50; 
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.compliance-link:hover {
+  text-decoration: underline;
+}
+
+.link-icon {
+  font-size: 0.8em;
+  margin-left: 5px;
+}
+
+.compliance-details p {
+  color: rgba(128, 128, 128, 0.678);
+  margin-bottom: -2px;
+}
+
+.compliance-content h2 {
+  font-size: 15px;
+  color: black;
+}
+
+.compliance-content p {
+  font-size: 15px;
+}
+
+.header {
+  margin-bottom: 10px;
+}

@@ -82,6 +82,11 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import GeneralContent from "./GeneralContent";
 import MaterialCompositionContent from "./MaterialCompositionContent";
+import ComplianceContent from "./ComplianceContent";
+import PerformanceContent from "./PerformanceContent";
+import SupplyChainContent from "./SupplyChainContent";
+import CircularityContent from "./CircularityContent";
+import CarbonFootprintContent from "./CarbonFootprintContent";
 import "./PassportDetails.css";
 
 // Interfaces
@@ -91,13 +96,12 @@ interface Tab {
 }
 
 // Components
-const PerformanceContent: React.FC = () => <div>Performance Content</div>;
-const ComplianceContent: React.FC = () => <div>Compliance Content</div>;
-const CircularityContent: React.FC = () => <div>Circularity Content</div>;
-const SupplyChainContent: React.FC = () => <div>Supply Chain Content</div>;
-const CarbonFootprintContent: React.FC = () => (
-  <div>Carbon Footprint Content</div>
-);
+// const PerformanceContent: React.FC = () => <div>Performance Content</div>;
+// const CircularityContent: React.FC = () => <div>Circularity Content</div>;
+// const SupplyChainContent: React.FC = () => <div>Supply Chain Content</div>;
+// const CarbonFootprintContent: React.FC = () => (
+//   <div>Carbon Footprint Content</div>
+// );
 
 const PassportDetails: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>("general");
@@ -169,7 +173,8 @@ const PassportDetails: React.FC = () => {
       </div>
       <div className="second-section">
         <Link to="/" className="back">
-          {" "}⬅ Back to summary
+          {" "}
+          <span>&#8592;</span> Back to summary
         </Link>
         <div className="tabs-container">
           <div className="passport-tabs">
