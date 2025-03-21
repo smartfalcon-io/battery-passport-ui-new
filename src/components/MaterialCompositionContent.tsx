@@ -1,0 +1,34 @@
+// MaterialCompositionContent.tsx
+import React from 'react';
+
+const MaterialCompositionContent: React.FC = () => {
+  return (
+    <div>
+      <h2>Materials composition</h2>
+      <p>Material composition of the battery</p>
+      <div style={{ textAlign: 'center', marginTop: '50px' }}>
+        <span role="img" aria-label="lock" style={{ fontSize: '3em', color: 'red' }}>
+          🔒
+        </span>
+        <p style={{ marginTop: '20px' }}>
+          Information in this section requires a privileged access. Please authenticate to view.
+        </p>
+        <button
+          style={{
+            marginTop: '20px',
+            padding: '10px 20px',
+            backgroundColor: 'green',
+            color: 'white',
+            border: 'none',
+            borderRadius: '5px',
+            cursor: 'pointer',
+          }}
+        >
+          Authenticate →
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default MaterialCompositionContent;

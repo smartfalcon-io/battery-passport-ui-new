@@ -1,0 +1,251 @@
+.home {
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f4;
+  /* overflow: hidden; */
+}
+
+.card {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+  
+.content-container {
+  width: 100%;
+  max-width: 1600px;  
+  display: flex;
+  height: 390px;
+}
+
+/* .content-container {
+  width: 100%;
+  max-width: 1600px;
+  display: flex;
+  align-items: flex-start; 
+  justify-content: center; 
+  gap: 30px; 
+  padding: 20px; 
+  position: relative;
+} */
+
+
+
+.battery-passport-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.battery-passport {
+  width: 70%;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* .battery-passport p {
+  font-size: 14px;
+} */
+
+.passport-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.passport-id {
+  font-size: 14px;
+  color: gray;
+}
+
+.passport-id-value {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.verified-badge {
+  background: #4CAF50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.qr-icon {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.info-grid {
+  display: grid;
+  /* grid-template-columns: repeat(2, 1fr); */
+  grid-template-columns: 0.7fr 1fr;
+  gap: 15px;
+  
+  /* column-width: 200px; */
+  margin-top: 15px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-item p:first-child {
+  font-size: 20px;
+  color: gray;
+  font-size: 15px;
+}
+
+.info-item p {
+  font-size: 25px;
+}
+
+.info-value {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.status.original {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.economic-operator-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: -285px;
+  margin-right: 5px;
+}
+
+.economic-operator-section p {
+  font-size: 14px;
+  margin-right: 15px;
+  margin-bottom: 5px;
+}
+
+/* .economic-operator {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  background: #f8f8f8;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+} */
+
+.economic-operator img {
+  width: 150px;
+  height: auto;
+  margin-right: 2px;
+  border-radius: 10px;
+  border: 5px solid #ccc;
+}
+
+.qr-section {
+  margin-top: 40px;
+  margin-right: 100px;
+}
+
+
+.qr-section {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center image & button */
+  justify-content: center;
+  gap: 10px; /* Adds space between the image and the button */
+}
+
+.right-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.btn {
+  margin-top: 40px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: 2px solid #4CAF50; /* Add border initially to prevent size shift */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.btn:hover {
+  color: #4CAF50;
+  background-color: white;
+  border: 2px solid #4CAF50;
+}
+
+
+
+.piecharts {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px; /* Increase spacing from content-container */
+  padding-bottom: 20px;
+  
+}
+
+
+.summary-report {
+  width: 90%;
+  max-width: 1200px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: hidden;
+}
+
+.charts-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.pie-chart-container {
+  width: 220px;
+  text-align: center;
+  margin: 10px;
+}
+
+.unverified-badge {
+  background: #dc3545;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 10px;
+}
