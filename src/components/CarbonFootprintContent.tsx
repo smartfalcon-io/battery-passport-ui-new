@@ -12,7 +12,9 @@ const CarbonFootprintContent: React.FC = () => {
       <hr />
       <div className="carbon-details">
         <div className="carbon-item">
-          <p className="carbon-label">Amount</p>
+          <p className="carbon-label">
+            Amount<span className="verified-badge2">Verified</span>
+          </p>
           <p>137.00gCO₂e/kWh</p>
         </div>
         <div className="carbon-item">

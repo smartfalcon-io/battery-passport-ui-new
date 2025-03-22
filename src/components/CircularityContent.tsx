@@ -1,5 +1,5 @@
 import React from "react";
-// import "./CircularityContent.css";
+import "./CircularityContent.css";
 import PieChartComponent2 from "../components/PieChartComponent2";
 
 const nickelData = [
@@ -34,6 +34,21 @@ const CircularityContent: React.FC = () => {
         <p>Circularity of the battery</p>
       </div>
       <hr />
+      <div className="circularity-details">
+        <div className="circularity-item">
+          <h4 className="circularity-label">Separate collection</h4>
+          <p>
+            Ensure that the waste battery is disposed of according to material
+            composition
+          </p>
+        </div>
+        <div className="circularity-item">
+          <h4 className="circularity-label">
+            End of life information: Waste prevention
+          </h4>
+          <p>Don't dispose battery at normal waste</p>
+        </div>
+      </div>
       <h3 className="recycle">
         Recycled Content Share{" "}
         <span className="unverified-badge">Unverified</span>
