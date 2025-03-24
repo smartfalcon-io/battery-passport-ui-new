@@ -1,3 +1,7 @@
+.carbon-footprint {
+  margin-bottom: 10px   ;
+}
+
 .circularity-details {
     display: grid;
     grid-template-columns: 0.3fr 0.3fr;
@@ -6,7 +10,7 @@
   
   .circularity-item {
     padding: 10px;
-    border-bottom: 1px solid #eee;  
+    margin-bottom: -30px;
   }
   
   .circularity-label {
