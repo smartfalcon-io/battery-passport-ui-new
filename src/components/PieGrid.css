@@ -6,6 +6,10 @@
   margin-left: 20px;
 }
 
+.recycle span {
+  margin-left: -0.5px;
+}
+
 .pie-item {
     color: rgba(128, 128, 128, 0.678);
 }

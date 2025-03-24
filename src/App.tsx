@@ -32,8 +32,8 @@ const App: React.FC = () => {
         <Header />
         <ScrollToTop />
         <Routes>
-          <Route path="/signin" element={<SignIn />} />
           <Route path="/" element={<Home />} />
+          <Route path="/signin" element={<SignIn />} />
           <Route path="/passport-details" element={<PassportDetails />} />
           <Route path="/registered-user" element={<RegisteredUser />} />
           <Route

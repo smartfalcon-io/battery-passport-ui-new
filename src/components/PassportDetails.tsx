@@ -87,6 +87,7 @@ import PerformanceContent from "./PerformanceContent";
 import SupplyChainContent from "./SupplyChainContent";
 import CircularityContent from "./CircularityContent";
 import CarbonFootprintContent from "./CarbonFootprintContent";
+import SignaturePopup from "./SignaturePopup";
 import "./PassportDetails.css";
 
 // Interfaces
@@ -104,6 +105,7 @@ interface Tab {
 // );
 
 const PassportDetails: React.FC = () => {
+  const [isHovered, setIsHovered] = useState(false);
   const [activeTab, setActiveTab] = useState<string>("general");
 
   const tabs: Tab[] = [
@@ -141,7 +143,13 @@ const PassportDetails: React.FC = () => {
     <div className="passport-sections">
       <div className="first-section">
         <div className="passport-card">
-          <span className="verified-badge">Verified</span>
+          <span
+            className="verified-badge"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            Verified{isHovered && <SignaturePopup />}
+          </span>
           <div className="passport-grid">
             <div className="passport-item">
               <p>Passport ID</p>

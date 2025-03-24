@@ -4,6 +4,7 @@
   height: 900px;
   display: flex;
   align-items: center;
+  margin-top: 10px;
   /* justify-content: center; */
   /* background-color: red ; */
 }
@@ -32,6 +33,7 @@
   display: flex;
   flex-direction: column;
   border: rgb(231, 225, 225) 1px solid;
+  margin-left: 20px;
 }
 
 /* .battery-passport p {
@@ -263,4 +265,18 @@
   width: 98.5%;
   color: #dc3545;
   background: linear-gradient(to right, #ff5733, #ffc107, #28a745);
+}
+
+
+
+
+.verified-badge {
+  background: #4CAF50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  position: relative;
+  cursor: pointer;
 }
