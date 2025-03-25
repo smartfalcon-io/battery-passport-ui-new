@@ -18,7 +18,7 @@ const SupplyChainContent: React.FC = () => {
           </a>
         </div>
         <div className="compliance-item">
-          <p className="compliance-label">EU declaration of conformity ID</p>
+          <p className="compliance-label">Declaration of conformity ID</p>
           <a href="#" className="compliance-link">
             External link <span className="link-icon">🔗</span>
           </a>

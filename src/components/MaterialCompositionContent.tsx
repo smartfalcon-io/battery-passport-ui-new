@@ -1,13 +1,14 @@
-
 import React from "react";
-import "./MaterialCompositionContent.css"
+import { useNavigate } from "react-router-dom";
+import "./MaterialCompositionContent.css";
 
 const MaterialCompositionContent: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <div className="material">
       <div className="header">
-      <h2>Materials composition</h2>
-      <p>Material composition of the battery</p>
+        <h2>Materials composition</h2>
+        <p>Material composition of the battery</p>
       </div>
       <hr />
       <div style={{ textAlign: "center", marginTop: "50px" }}>
@@ -22,11 +23,23 @@ const MaterialCompositionContent: React.FC = () => {
           Information in this section requires a privileged access. Please
           authenticate to view.
         </p>
-        <button
+        {/* <button
           style={{
             marginTop: "20px",
             padding: "10px 20px",
             backgroundColor: "green",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer",
+          }}
+        > */}
+        <button
+          onClick={() => navigate("/signin")}
+          style={{
+            marginTop: "20px",
+            padding: "10px 20px",
+            backgroundColor: "#4CAF50",
             color: "white",
             border: "none",
             borderRadius: "5px",

@@ -180,7 +180,7 @@ const PassportDetails: React.FC = () => {
         </div>
       </div>
       <div className="second-section">
-        <Link to="/" className="back">
+        <Link to="/home" className="back">
           {" "}
           <span>&#8592;</span> Back to summary
         </Link>
