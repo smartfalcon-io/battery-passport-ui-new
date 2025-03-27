@@ -11,8 +11,9 @@ import SignIn from "./components/SignIn";
 import RegisteredUser from "./components/RegisteredUsers";
 import VerifiableCredentials from "./components/VerifiableCredentials";
 import PassportDetails from "./components/PassportDetails";
-import Starter from "./components/Starter"
-
+import Starter from "./components/Starter";
+import Main from "./components/Main";
+import Issuer from "./components/Issuer";
 
 // import BatteryPassport from "./components/BatteryPassport";
 import "./App.css";
@@ -34,8 +35,10 @@ const App: React.FC = () => {
         <Header />
         <ScrollToTop />
         <Routes>
+          <Route path="/" element={<Main />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/" element={<Starter />} />
+          <Route path="/starter" element={<Starter />} />
+          <Route path="/issuer" element={<Issuer />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/passport-details" element={<PassportDetails />} />
           <Route path="/registered-user" element={<RegisteredUser />} />

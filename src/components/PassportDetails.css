@@ -105,6 +105,7 @@
     border: 1px rgb(238, 232, 232) solid;
     border-radius: 10px;
     margin-top: 10px;
+    z-index: 1000;
   }
 
   .passport-tabs {

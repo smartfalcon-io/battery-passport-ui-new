@@ -13,9 +13,12 @@
 // export default VerifiableCredentials;
 
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../components/VerifiableCredentials.css";
 
 const VerifiableCredentials: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="vc">
       <div className="verifiable-credentials-container">
@@ -31,7 +34,9 @@ const VerifiableCredentials: React.FC = () => {
           Scan, or tap on, the above code to verify your credential with MS
           Authenticator or any compliant wallet.
         </p>
-        <button className="cancel-button">✖ Cancel</button>
+        <button className="cancel-button" onClick={() => navigate("/signin")}>
+          ✖ Cancel
+        </button>
       </div>
     </div>
   );
