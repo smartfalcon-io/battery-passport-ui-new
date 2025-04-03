@@ -221,7 +221,7 @@ import {
   TableRow,
 } from "../components/ui/table.tsx";
 import { Input } from "../components/ui/input";
-import "./MaterialCompositionContent.css";
+import "../assets/css/MaterialCompositionContent.css";
 
 // Define table data structure
 interface BatteryComponent {

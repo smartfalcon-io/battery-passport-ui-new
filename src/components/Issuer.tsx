@@ -100,7 +100,7 @@ import {
   TableBody,
   TableCell,
 } from "../components/ui/table";
-import "./Issuer.css";
+import "../assets/css/Issuer.css";
 
 const initialData = [
   { batchId: "12345", completed: 10, pending: 2, status: "Processing" },

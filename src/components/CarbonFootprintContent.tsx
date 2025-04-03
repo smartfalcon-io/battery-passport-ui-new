@@ -1,6 +1,6 @@
 import React from "react";
 import PieChartComponent from "./PieChartComponent";
-import "./CarbonFootprintContent.css";
+import "../assets/css/CarbonFootprintContent.css";
 
 const CarbonFootprintContent: React.FC = () => {
   return (

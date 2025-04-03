@@ -25,7 +25,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import { FaIdCard, FaUser } from "react-icons/fa";
-import "../components/SignIn.css"; // Import CSS for styling
+import "../assets/css/SignIn.css"; // Import CSS for styling
 
 const SignIn: React.FC = () => {
   const navigate = useNavigate(); // Initialize navigation

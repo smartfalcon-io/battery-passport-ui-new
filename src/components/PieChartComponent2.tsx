@@ -112,7 +112,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import "./PieChartComponent.css";
+import "../assets/css/PieChartComponent.css";
 
 interface PieChartProps {
   title: string;

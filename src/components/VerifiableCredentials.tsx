@@ -14,7 +14,7 @@
 
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../components/VerifiableCredentials.css";
+import "../assets/css/VerifiableCredentials.css";
 
 const VerifiableCredentials: React.FC = () => {
   const navigate = useNavigate();

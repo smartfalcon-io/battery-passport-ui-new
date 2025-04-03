@@ -40,14 +40,14 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Starter.css";
+import "../assets/css/Starter.css";
 
 const FetchPage: React.FC = () => {
   const [passportId, setPassportId] = useState<string>("");
   const navigate = useNavigate();
 
   const VALID_DID =
-    "did:web:acme.battery.pass:0226151e-949c-d067-8ef3-162431e28976";
+    "did:web:acme.battery.pass:fd87d953-4da2-4e6f-80b0-72f756d87a08";
 
   const handleFetchData = () => {
     if (passportId === VALID_DID) {
@@ -66,7 +66,7 @@ const FetchPage: React.FC = () => {
     <div className="starter-container">
       <div className="starter-card">
         <h2>Passport Id</h2>
-        <hr />
+        <hr /> 
         <input
           type="text"
           value={passportId}

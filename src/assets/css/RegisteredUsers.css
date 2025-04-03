@@ -1,0 +1,186 @@
+/* .registered-user-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    margin-top: -300px;
+  }
+  
+  .login-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: #4CAF50;
+  }
+  
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-size: 0.9rem;
+    text-align: left;
+    margin: 5px 0;
+  }
+  
+  input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .forgot-password {
+    font-size: 0.9rem;
+    color: #007bff;
+    text-decoration: none;
+    margin-bottom: 1rem;
+  }
+  
+  .signin-button {
+    background: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .signin-button:hover {
+    background: #005a46;
+  }
+   */
+
+
+   .registered-user-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh; /* Ensures proper vertical alignment */
+    margin-top: 0; /* Removed negative margin for better responsiveness */
+    padding: 20px; /* Prevents content from touching screen edges */
+  }
+  
+  .login-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 350px; /* Prevents card from getting too wide */
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: #4CAF50;
+  }
+  
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-size: 0.9rem;
+    text-align: left;
+    margin: 5px 0;
+  }
+  
+  input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%; /* Ensures input fields take full width */
+  }
+  
+  .forgot-password {
+    font-size: 0.9rem;
+    color: #007bff;
+    text-decoration: none;
+    margin-bottom: 1rem;
+  }
+  
+  .signin-button {
+    background: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .signin-button:hover {
+    background: #005a46;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .registered-user-container {
+      padding: 10px; /* More compact padding on smaller screens */
+    }
+  
+    .login-card {
+      width: 90%; /* Allows more space on mobile screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .login-card {
+      width: 100%; /* Full width for extra small screens */
+      padding: 1.5rem; /* Slightly reduced padding for better fit */
+    }
+  
+    h3 {
+      font-size: 1rem;
+    }
+  
+    input {
+      font-size: 0.9rem;
+    }
+  
+    .signin-button {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  }
+  

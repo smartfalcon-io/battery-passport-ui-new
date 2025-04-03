@@ -1,5 +1,5 @@
 import React from "react";
-import "./SupplyChainContent.css";
+import "../assets/css/SupplyChainContent.css";
 
 const SupplyChainContent: React.FC = () => {
   return (

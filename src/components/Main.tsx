@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 // import { FaIdCard, FaUser } from "react-icons/fa";
-import "../components/Main.css";
+import "../assets/css/Main.css";
 
 const Main: React.FC = () => {
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ const Main: React.FC = () => {
         {/* Authenticate with any of the below options */}
       </p>
       <div className="main-options">
-        <button
+        <button 
           className="main-btn"
           onClick={() => navigate("/signin")}
         >

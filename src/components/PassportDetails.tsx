@@ -88,7 +88,7 @@ import SupplyChainContent from "./SupplyChainContent";
 import CircularityContent from "./CircularityContent";
 import CarbonFootprintContent from "./CarbonFootprintContent";
 import SignaturePopup from "./SignaturePopup";
-import "./PassportDetails.css";
+import "../assets/css/PassportDetails.css";
 
 // Interfaces
 interface Tab {
@@ -137,7 +137,7 @@ const PassportDetails: React.FC = () => {
       default:
         return null;
     }
-  };
+  }; 
 
   return (
     <div className="passport-sections">

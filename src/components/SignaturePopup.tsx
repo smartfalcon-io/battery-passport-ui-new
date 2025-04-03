@@ -1,5 +1,5 @@
 import React from "react";
-import "./SignaturePopup.css";
+import "../assets/css/SignaturePopup.css";
 
 const SignaturePopup: React.FC = () => {
   const signatures = [

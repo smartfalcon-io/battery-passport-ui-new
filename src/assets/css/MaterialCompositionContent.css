@@ -1,0 +1,314 @@
+/* .material h2 {
+    font-size: 15px;
+    color: black;
+}
+
+.material p {
+    font-size: 15px;
+}
+
+.header {
+    margin-bottom: 10px;
+}
+
+
+
+
+  .auth-container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .lock-icon {
+    font-size: 3em;
+    color: red;
+  }
+  
+  .auth-message {
+    margin-top: 20px;
+  }
+  
+  .auth-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .table-container {
+    margin-top: 20px;
+    overflow-x: auto;
+  }
+  
+  .composition-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .composition-table th, .composition-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .composition-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .composition-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .composition-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+
+.p-6 {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #4CAF50;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
+  .search {
+    margin-top: 10px;
+  }
+   */
+
+
+   .material h2 {
+    font-size: 15px;
+    color: black;
+}
+
+.material p {
+    font-size: 15px;
+}
+
+.header {
+    margin-bottom: 10px;
+}
+
+/* Authentication Section */
+.auth-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.lock-icon {
+    font-size: 3em;
+    color: red;
+}
+
+.auth-message {
+    margin-top: 20px;
+}
+
+.auth-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.auth-button:hover {
+    background-color: #16a34a;
+}
+
+/* Responsive Table */
+.table-container {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.composition-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    min-width: 600px; /* Ensure proper table visibility */
+}
+
+.composition-table th, .composition-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.composition-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.composition-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.composition-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Card Layout */
+.p-6 {
+    padding: 1.5rem;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    min-width: 600px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* Search Bar */
+.search {
+    margin-top: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .composition-table {
+        min-width: 100%;
+    }
+
+    .p-6 {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .auth-container {
+        margin-top: 30px;
+    }
+
+    .lock-icon {
+        font-size: 2.5em;
+    }
+
+    .auth-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    input {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-container {
+        margin-top: 20px;
+    }
+
+    .lock-icon {
+        font-size: 2em;
+    }
+
+    .auth-button {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+
+    .p-6 {
+        padding: 0.8rem;
+    }
+
+    th, td {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    input {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+}

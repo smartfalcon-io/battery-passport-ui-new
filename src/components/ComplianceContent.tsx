@@ -1,6 +1,6 @@
 // // ComplianceContent.tsx
 import React from "react";
-import "./ComplianceContent.css";
+import "../assets/css/ComplianceContent.css";
 
 const SupplyChainContent: React.FC = () => {
   return (

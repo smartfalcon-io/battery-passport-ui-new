@@ -1,7 +1,7 @@
 // PieGrid.tsx
 import React from "react";
 import PieChartComponent2 from "../components/PieChartComponent2";
-import "./PieGrid.css";
+import "../assets/css/PieGrid.css";
 
 const nickelData = [
   { name: "Post Consumer Share", value: 7, color: "#28a745" },

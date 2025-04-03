@@ -1,0 +1,57 @@
+/* .performance h2 {
+    font-size: 15px;
+    color: black;
+}
+
+.performance p {
+    font-size: 15px;
+}
+
+.header {
+    margin-bottom: 10px;
+} */
+
+
+.performance h2 {
+    font-size: 15px;
+    color: black;
+}
+
+.performance p {
+    font-size: 15px;
+}
+
+.header {
+    margin-bottom: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .performance h2 {
+        font-size: 14px;
+    }
+
+    .performance p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .performance h2 {
+        font-size: 13px;
+    }
+
+    .performance p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .performance h2 {
+        font-size: 12px;
+    }
+
+    .performance p {
+        font-size: 12px;
+    }
+}

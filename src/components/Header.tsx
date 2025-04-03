@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import "../components/Header.css";
+import "../assets/css/Header.css";
 
 const Header: React.FC = () => {
   const [showSignIn, setShowSignIn] = useState(false);

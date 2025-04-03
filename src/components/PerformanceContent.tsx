@@ -1,6 +1,6 @@
 // GeneralContent.tsx
 import React from "react";
-import "./GeneralContent.css";
+import "../assets/css/PerformanceContent.css";
 
 const GeneralContent: React.FC = () => {
   return (

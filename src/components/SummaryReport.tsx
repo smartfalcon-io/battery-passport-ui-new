@@ -1,5 +1,6 @@
 import React from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import "../assets/css/SummaryReport.css";
 
 const data = [
   { name: "Raw Material Extraction", value: 65, color: "#4CAF50" },

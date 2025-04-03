@@ -1,5 +1,5 @@
 import React from "react";
-import "./CircularityContent.css";
+import "../assets/css/CircularityContent.css";
 import PieChartComponent2 from "../components/PieChartComponent2";
 
 const nickelData = [

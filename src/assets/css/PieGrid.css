@@ -1,0 +1,58 @@
+/* .recycle {
+  color: rgba(128, 128, 128, 0.678);
+  margin-top: 50px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  margin-left: 20px;
+}
+
+.recycle span {
+  margin-left: -0.5px;
+}
+
+.pie-item {
+    color: rgba(128, 128, 128, 0.678);
+    margin-bottom: 20px;
+} */
+
+
+.recycle {
+  color: rgba(128, 128, 128, 0.678);
+  margin: 50px 0 15px 20px;
+  font-size: 14px;
+}
+
+.recycle span {
+  margin-left: -0.5px;
+}
+
+.pie-item {
+  color: rgba(128, 128, 128, 0.678);
+  margin-bottom: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .recycle {
+    font-size: 13px;
+    margin-left: 10px; /* Reduces left margin on smaller screens */
+    text-align: center; /* Centers text for better readability */
+  }
+
+  .pie-item {
+    font-size: 13px;
+    margin-bottom: 15px; /* Slightly reduces spacing for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .recycle {
+    font-size: 12px;
+    margin-left: 5px; /* Further reduces margin for extra small screens */
+  }
+
+  .pie-item {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+}

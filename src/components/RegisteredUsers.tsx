@@ -33,7 +33,7 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./RegisteredUsers.css";
+import "../assets/css/RegisteredUsers.css";
 
 const RegisteredUser: React.FC = () => {
   const [email, setEmail] = useState("");

@@ -7,7 +7,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import "./PieChartComponent.css";
+import "../assets/css/PieChartComponent.css";
 
 const carbonFootprintData = [
   { name: "Recycling", value: 5.8, color: "#6c757d" },
