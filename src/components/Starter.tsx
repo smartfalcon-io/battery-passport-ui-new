@@ -38,35 +38,108 @@
 
 // export default FetchPage;
 
+// import React, { useState } from "react";
+// import { useNavigate } from "react-router-dom";
+// import "../assets/css/Starter.css";
+
+// const FetchPage: React.FC = () => {
+//   const [passportId, setPassportId] = useState<string>("");
+//   const navigate = useNavigate();
+
+//   const VALID_DID =
+//     "did:web:acme.battery.pass:fd87d953-4da2-4e6f-80b0-72f756d87a08";
+
+//   const handleFetchData = () => {
+//     if (passportId === VALID_DID) {
+//       navigate("/home");
+//     } else {
+//       alert("Invalid Passport ID! Please enter the correct DID.");
+//     }
+//   };
+
+//   const handleUseSampleDID = (e: React.MouseEvent) => {
+//     e.preventDefault(); // Prevents default anchor behavior
+//     setPassportId(VALID_DID);
+//   };
+
+//   return (
+//     <div className="starter-container">
+//       <div className="starter-card">
+//         <h2>Passport Id</h2>
+//         <hr /> 
+//         <input
+//           type="text"
+//           value={passportId}
+//           onChange={(e) => setPassportId(e.target.value)}
+//           placeholder="Enter Passport ID"
+//           className="input-field"
+//         />
+//         <button onClick={handleFetchData} className="fetch-button">
+//           Fetch Data
+//         </button>
+//       </div>
+//       <p className="sample-did">
+//         <a href="#" onClick={handleUseSampleDID}>
+//           Use sample battery passport ID
+//         </a>
+//       </p>
+//     </div>
+//   );
+// };
+
+// export default FetchPage;
+
+
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../assets/css/Starter.css";
 
 const FetchPage: React.FC = () => {
   const [passportId, setPassportId] = useState<string>("");
+  const [error, setError] = useState<string>("");
   const navigate = useNavigate();
 
-  const VALID_DID =
-    "did:web:acme.battery.pass:fd87d953-4da2-4e6f-80b0-72f756d87a08";
+  const handleFetchData = async () => {
+    if (!passportId.trim()) {
+      setError("Please enter a valid Passport ID.");
+      return;
+    }
 
-  const handleFetchData = () => {
-    if (passportId === VALID_DID) {
-      navigate("/home");
-    } else {
-      alert("Invalid Passport ID! Please enter the correct DID.");
+    setError(""); // Clear previous errors
+    try {
+      const API_URL = `/fetch-credential-details/${passportId}`;
+      const BEARER_TOKEN = "your_actual_bearer_token_here"; // Replace with actual token
+
+      const response = await axios.get(API_URL, {
+        headers: {
+          Authorization: `Bearer ${BEARER_TOKEN}`,
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.data && response.data.attributes) {
+        navigate("/home"); // Redirect to home if valid
+      } else {
+        setError("Invalid Passport ID. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error fetching battery data:", error);
+      setError("Failed to fetch data. Please check the Passport ID.");
     }
   };
 
   const handleUseSampleDID = (e: React.MouseEvent) => {
-    e.preventDefault(); // Prevents default anchor behavior
-    setPassportId(VALID_DID);
+    e.preventDefault();
+    setPassportId("did:web:acme.battery.pass:fd87d953-4da2-4e6f-80b0-72f756d87a08");
   };
 
   return (
     <div className="starter-container">
       <div className="starter-card">
         <h2>Passport Id</h2>
-        <hr /> 
+        <hr />
         <input
           type="text"
           value={passportId}
@@ -78,11 +151,14 @@ const FetchPage: React.FC = () => {
           Fetch Data
         </button>
       </div>
+
       <p className="sample-did">
         <a href="#" onClick={handleUseSampleDID}>
           Use sample battery passport ID
         </a>
       </p>
+
+      {error && <p className="error-message">{error}</p>}
     </div>
   );
 };
