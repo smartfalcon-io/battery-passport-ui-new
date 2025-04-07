@@ -378,7 +378,7 @@
 // export default Home;
 
 
-// Home.tsx
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -599,7 +599,9 @@ const Home: React.FC = () => {
               alt="Relevant Image"
               className="right-image"
             />
-            <Link to="/passport-details">
+            <Link to="/passport-details"
+                  state={{ batteryData, carbonFootprintData, materialCompositionData }}
+            >
               <button className="btn">View more about this passport</button>
             </Link>
           </div>
@@ -623,6 +625,8 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+
     </section>
   );
 };

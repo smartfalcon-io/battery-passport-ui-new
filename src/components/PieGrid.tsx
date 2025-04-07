@@ -216,7 +216,7 @@ interface PieGridProps {
 
   };
 }
-
+ 
 const PieGrid: React.FC<PieGridProps> = ({ data }) => {
   return (
     <div className="pie-grid-row">
