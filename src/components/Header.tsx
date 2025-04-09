@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "../assets/css/Header.css";
+import logo from "../assets/Battery_Passport_Logo.png";
 
 const Header: React.FC = () => {
   const [showSignIn, setShowSignIn] = useState(false);
@@ -17,7 +18,8 @@ const Header: React.FC = () => {
   return (
     <header className="custom-header">
       <div className="logo-container">
-        <h1>BATTERY PASSPORT</h1>
+        {/* <h1>BATTERY PASSPORT</h1> */}
+        <img src={logo}  alt="" />
       </div>
 
       <nav className="nav-icons">

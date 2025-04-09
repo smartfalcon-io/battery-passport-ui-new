@@ -87,10 +87,16 @@
   z-index: 200;
 }
 
-.logo-container h1 {
+/* .logo-container h1 {
   margin: 0;
   font-size: 25px;
   margin-left: 170px;
+} */
+
+.logo-container img{
+  width: 190px;
+  margin: 0;
+  margin-left: 200px;
 }
 
 /* Navigation Icons */
