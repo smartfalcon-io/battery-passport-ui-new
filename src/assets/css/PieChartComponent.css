@@ -13,7 +13,7 @@
 
    .custom-tooltip {
     padding: 8px;
-    border-radius: 5px;
+    border-radius: 5px; 
     color: white;
     font-size: 12px;
     font-weight: bold;
@@ -39,6 +39,7 @@
     margin: auto; /* Centers the chart container */
 }
 
+
 /* Tooltip Styles */
 .custom-tooltip {
     padding: 8px;
@@ -50,6 +51,9 @@
     background-color: rgba(0, 0, 0, 0.7); /* Adds slight transparency */
 }
 
+.piechart:hover{
+    cursor: pointer;
+}
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .pie-chart-container {

@@ -1,32 +1,19 @@
+
 // import React from "react";
+// import { useLocation } from "react-router-dom";
 // import "../assets/css/CircularityContent.css";
 // import PieChartComponent2 from "../components/PieChartComponent2";
 
-// const nickelData = [
-//   { name: "Post Consumer Share", value: 7, color: "#28a745" },
-//   { name: "Pre Consumer Share", value: 17, color: "#2C3E50" },
-//   { name: "Primary Material", value: 76, color: "#BDC3C7" },
-// ];
-
-// const cobaltData = [
-//   { name: "Post Consumer Share", value: 9, color: "#28a745" },
-//   { name: "Pre Consumer Share", value: 10, color: "#2C3E50" },
-//   { name: "Primary Material", value: 81, color: "#BDC3C7" },
-// ];
-
-// const lithiumData = [
-//   { name: "Post Consumer Share", value: 10, color: "#28a745" },
-//   { name: "Pre Consumer Share", value: 14, color: "#2C3E50" },
-//   { name: "Primary Material", value: 76, color: "#BDC3C7" },
-// ];
-
-// const leadData = [
-//   { name: "Post Consumer Share", value: 6, color: "#28a745" },
-//   { name: "Pre Consumer Share", value: 11, color: "#2C3E50" },
-//   { name: "Primary Material", value: 83, color: "#BDC3C7" },
-// ];
-
 // const CircularityContent: React.FC = () => {
+//   const location = useLocation();
+//   const { materialCompositionData } = location.state || {};
+
+//   // fallback if data isn't available
+//   const nickelData = materialCompositionData?.nickel || [];
+//   const cobaltData = materialCompositionData?.cobalt || [];
+//   const lithiumData = materialCompositionData?.lithium || [];
+//   const leadData = materialCompositionData?.lead || [];
+
 //   return (
 //     <div className="supply-content">
 //       <div className="header">
@@ -37,15 +24,10 @@
 //       <div className="circularity-details">
 //         <div className="circularity-item">
 //           <h4 className="circularity-label">Separate collection</h4>
-//           <p>
-//             Ensure that the waste battery is disposed of according to material
-//             composition
-//           </p>
+//           <p>Ensure that the waste battery is disposed of according to material composition</p>
 //         </div>
 //         <div className="circularity-item">
-//           <h4 className="circularity-label">
-//             End of life information: Waste prevention
-//           </h4>
+//           <h4 className="circularity-label">End of life information: Waste prevention</h4>
 //           <p>Don't dispose battery at normal waste</p>
 //         </div>
 //       </div>
@@ -75,45 +57,50 @@
 
 
 
-
-
 import React from "react";
 import { useLocation } from "react-router-dom";
-import "../assets/css/CircularityContent.css";
 import PieChartComponent2 from "../components/PieChartComponent2";
 
 const CircularityContent: React.FC = () => {
   const location = useLocation();
   const { materialCompositionData } = location.state || {};
 
-  // fallback if data isn't available
   const nickelData = materialCompositionData?.nickel || [];
   const cobaltData = materialCompositionData?.cobalt || [];
   const lithiumData = materialCompositionData?.lithium || [];
   const leadData = materialCompositionData?.lead || [];
 
   return (
-    <div className="supply-content">
-      <div className="header">
-        <h2>Circularity</h2>
-        <p>Circularity of the battery</p>
+    <div className="p-4">
+      <div className="mb-4">
+        <h2 className="text-2xl font-bold">Circularity</h2>
+        <p className="text-gray-700">Circularity of the battery</p>
       </div>
-      <hr />
-      <div className="circularity-details">
-        <div className="circularity-item">
-          <h4 className="circularity-label">Separate collection</h4>
-          <p>Ensure that the waste battery is disposed of according to material composition</p>
+      <hr className="mb-6" />
+
+      <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(150px,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(120px,1fr))] max-[486px]:grid-cols-1">
+        <div className="p-2 mb-[-30px]">
+          <h4 className="text-[15px] font-bold text-gray-500">Separate collection</h4>
+          <p className="text-black font-bold text-[16px]">
+            Ensure that the waste battery is disposed of according to material composition
+          </p>
         </div>
-        <div className="circularity-item">
-          <h4 className="circularity-label">End of life information: Waste prevention</h4>
-          <p>Don't dispose battery at normal waste</p>
+        <div className="p-2 mb-[-30px]">
+          <h4 className="text-[15px] font-bold text-gray-500">End of life information: Waste prevention</h4>
+          <p className="text-black font-bold text-[16px]">
+            Don't dispose battery at normal waste
+          </p>
         </div>
       </div>
-      <h3 className="recycle">
+
+      <h3 className="mt-12 text-xl font-semibold">
         Recycled Content Share{" "}
-        <span className="unverified-badge">Unverified</span>
+        <span className="ml-2 px-2 py-1 text-xs font-semibold text-white bg-yellow-500 rounded">
+          Unverified
+        </span>
       </h3>
-      <div className="pie-grid">
+
+      <div className="mt-6 flex md-flex-col gap-6">
         <div className="pie-item">
           <PieChartComponent2 title="NICKEL" data={nickelData} />
         </div>

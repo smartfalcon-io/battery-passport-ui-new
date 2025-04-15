@@ -75,6 +75,7 @@
 
 .custom-header {
   width: 100%;
+  height: 130px;
   background-color: white;
   color: #4CAF50;
   padding: 15px 25px; /* Adjusted padding for better spacing */
@@ -87,11 +88,7 @@
   z-index: 200;
 }
 
-/* .logo-container h1 {
-  margin: 0;
-  font-size: 25px;
-  margin-left: 170px;
-} */
+
 
 .logo-container img{
   width: 190px;
