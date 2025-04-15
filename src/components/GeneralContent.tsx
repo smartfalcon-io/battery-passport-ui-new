@@ -72,47 +72,32 @@
 // export default GeneralContent;
 
 
-
-
 import React from "react";
-import "../assets/css/GeneralContent.css";
 import { useLocation } from "react-router-dom";
 
-
-const GeneralContent: React.FC= () => {
-
+const GeneralContent: React.FC = () => {
   const location = useLocation();
-  const {batteryData} = location.state || {};
-
-  
+  const { batteryData } = location.state || {};
 
   return (
-    <div className="general">
-      <div className="header">
-        <h2>General</h2>
-        <p>Generic information about the battery</p>
+    <div className="p4">
+      <div className="header mb-2">
+        <h2 className="text-black text-lg">General</h2>
+        <p className="text-sm">Generic information about the battery</p>
       </div>
-      <hr />
-      <div
-        className="general-grid"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          gap: "20px",
-          marginTop: "20px",
-        }}
-      >
+      <hr className="mb-4" />
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-5">
         <div>
-          <h4>Name</h4>
-          <p>{batteryData?.Name}</p>
+          <h4 className="font-bold text-gray-500">Name</h4>
+          <p className="font-bold text-lg">{batteryData?.Name}</p>
         </div>
         <div>
-          <h4>Manufactured date</h4>
-          <p>{batteryData?.ManufacturedDate}</p>
+          <h4 className="font-bold text-gray-500">Manufactured date</h4>
+          <p className="font-bold text-lg">{batteryData?.ManufacturedDate}</p>
         </div>
         <div>
-          <h4>Facility ID</h4>
-          <p>
+          <h4 className="font-bold text-gray-500">Facility ID</h4>
+          <p className="font-bold text-lg">
             {batteryData?.facilityId}{" "}
             <span role="img" aria-label="location">
               📍
@@ -120,32 +105,27 @@ const GeneralContent: React.FC= () => {
           </p>
         </div>
         <div>
-          <h4>Manufactured by</h4>
-          <p>{batteryData?.ManufacturedBy}</p>
+          <h4 className="font-bold text-gray-500">Manufactured by</h4>
+          <p className="font-bold text-lg">{batteryData?.ManufacturedBy}</p>
         </div>
         <div>
-          <h4>Category</h4>
-          <p>{batteryData?.Category}</p>
+          <h4 className="font-bold text-gray-500">Category</h4>
+          <p className="font-bold text-lg">{batteryData?.Category}</p>
         </div>
         <div>
-          <h4>Status</h4>
-          <p>
+          <h4 className="font-bold text-gray-500">Status</h4>
+          <p className="font-bold text-lg">
             <span
-              style={{
-                display: "inline-block",
-                width: "10px",
-                height: "10px",
-                borderRadius: "50%",
-                backgroundColor: batteryData?.Status === "Damaged" ? "red" : "green",
-                marginRight: "5px",
-              }}
+              className={`inline-block w-2.5 h-2.5 rounded-full mr-1 ${
+                batteryData?.Status === "Damaged" ? "bg-red-600" : "bg-green-600"
+              }`}
             ></span>{" "}
             {batteryData?.Status}
           </p>
         </div>
         <div>
-          <h4>Weight</h4>
-          <p>{batteryData?.weight}kg</p>
+          <h4 className="font-bold text-gray-500">Weight</h4>
+          <p className="font-bold text-lg">{batteryData?.weight}kg</p>
         </div>
       </div>
     </div>

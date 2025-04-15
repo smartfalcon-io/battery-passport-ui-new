@@ -353,7 +353,7 @@ const Issuer: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-screen-xl p-5 md:p-10 mx-auto mt-24 flex flex-col items-center justify-center ml-80">
+    <div className="w-full max-w-screen-xl p-5 md:p-10 mx-auto mt-24 flex flex-col items-center justify-center ml-0 lg:ml-80">
       {/* File Upload Section */}
       <div className="bg-white p-8 border border-gray-300 rounded-lg shadow-md w-full mb-24">
         <h2 className="text-lg font-semibold mb-2 text-left">Upload a .csv File</h2>

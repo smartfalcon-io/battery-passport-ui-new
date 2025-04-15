@@ -666,6 +666,241 @@
 // export default Home;
 
 
+// import React, { useState, useEffect } from "react";
+// import { Link } from "react-router-dom";
+// import axios from "axios";
+// import PieChartComponent from "../components/PieChartComponent";
+// import PieGrid from "./PieGrid";
+// import SignaturePopup from "./SignaturePopup";
+
+// const API_URL = "/fetch-credential-details/db0ac7a0-af94-47df-a85e-3d0337637c6f";
+// const BEARER_TOKEN =
+//   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ3YWxsZXRfaWQiOiI2ZTgyNGY0ZC03NTIwLTQzOTMtODZjMS1mMTlhMGEzZmM4YTMiLCJpYXQiOjE3NDM2Nzg4MzgsImV4cCI6MTc0Mzc2NTIzOH0.yItLIkDu6Z8mO2vdkSH2M0sp5l6bpqrstjFq4rxHi-o";
+
+// const Home: React.FC = () => {
+//   const [isHovered, setIsHovered] = useState(false);
+//   const [batteryData, setBatteryData] = useState<any>({});
+//   const [carbonFootprintData, setCarbonFootprintData] = useState([]);
+//   const [materialCompositionData, setMaterialCompositionData] = useState({});
+
+//   useEffect(() => {
+//     const fetchBatteryData = async () => {
+//       try {
+//         const response = await axios.get(API_URL, {
+//           headers: {
+//             Authorization: `Bearer ${BEARER_TOKEN}`,
+//             "Content-Type": "application/json",
+//           },
+//         });
+
+//         const attributes = response.data.attributes;
+//         setBatteryData(attributes);
+
+//         const carbonData = [
+//           {
+//             name: "Recycling",
+//             value: parseFloat(attributes["CarbonFootprint: Recycling"]),
+//             color: "#6c757d",
+//           },
+//           {
+//             name: "Distribution",
+//             value: parseFloat(attributes["CarbonFootprint: Distribution"]),
+//             color: "#ffc107",
+//           },
+//           {
+//             name: "Main Production",
+//             value: parseFloat(attributes["CarbonFootprint: Main Production"]),
+//             color: "#dc3545",
+//           },
+//           {
+//             name: "Raw Material Extraction",
+//             value: parseFloat(attributes["CarbonFootprint: Raw Material Extraction"]),
+//             color: "#28a745",
+//           },
+//         ];
+//         setCarbonFootprintData(carbonData);
+
+//         const materialData = {
+//           nickel: [
+//             {
+//               name: "Post Consumer Share",
+//               value: parseFloat(attributes["Nickel: Post Consumer Share"] || "0"),
+//               color: "#dc3545",
+//             },
+//             {
+//               name: "Pre Consumer Share",
+//               value: parseFloat(attributes["Nickel: Pre Consumer Share"] || "0"),
+//               color: "#2C3E50",
+//             },
+//             {
+//               name: "Primary Material",
+//               value: parseFloat(attributes["Nickel: Primary Material"] || "0"),
+//               color: "#6c757d",
+//             },
+//           ],
+//           cobalt: [
+//             {
+//               name: "Post Consumer Share",
+//               value: parseFloat(attributes["Cobalt: Post Consumer Share"] || "0"),
+//               color: "#dc3545",
+//             },
+//             {
+//               name: "Pre Consumer Share",
+//               value: parseFloat(attributes["Cobalt: Pre Consumer Share"] || "0"),
+//               color: "#2C3E50",
+//             },
+//             {
+//               name: "Primary Material",
+//               value: parseFloat(attributes["Cobalt: Primary Material"] || "0"),
+//               color: "#6c757d",
+//             },
+//           ],
+//           lithium: [
+//             {
+//               name: "Post Consumer Share",
+//               value: parseFloat(attributes["Lithium: Post Consumer Share"] || "0"),
+//               color: "#dc3545",
+//             },
+//             {
+//               name: "Pre Consumer Share",
+//               value: parseFloat(attributes["Lithium: Pre Consumer Share"] || "0"),
+//               color: "#2C3E50",
+//             },
+//             {
+//               name: "Primary Material",
+//               value: parseFloat(attributes["Lithium: Primary Material"] || "0"),
+//               color: "#6c757d",
+//             },
+//           ],
+//           lead: [
+//             {
+//               name: "Post Consumer Share",
+//               value: parseFloat(attributes["Lead: Post Consumer Share"] || "0"),
+//               color: "#dc3545",
+//             },
+//             {
+//               name: "Pre Consumer Share",
+//               value: parseFloat(attributes["Lead: Pre Consumer Share"] || "0"),
+//               color: "#2C3E50",
+//             },
+//             {
+//               name: "Primary Material",
+//               value: parseFloat(attributes["Lead: Primary Material"] || "0"),
+//               color: "#6c757d",
+//             },
+//           ],
+//         };
+//         setMaterialCompositionData(materialData);
+//       } catch (error) {
+//         console.error("Error fetching battery data:", error);
+//       }
+//     };
+
+//     fetchBatteryData();
+//   }, []);
+
+//   return (
+//     <section className="mt-52">
+//       <div className="w-full max-w-6xl flex items-center mt-2 flex-wrap ml-32">
+//         {/* Battery Passport Section */}
+//         <div className="flex-1 flex justify-center flex-wrap w-full max-w-6xl ml-40">
+//           <div className="w-9/10 bg-white p-5 rounded-lg border border-gray-300  flex flex-col">
+//             <div className="flex items-center mb-4 justify-between">
+//               <div>
+//                 <p className="text-sm text-gray-500 font-bold">Passport ID:</p>
+//                 <p className="text-lg font-bold">did:web:acme.battery.pass:0226151e-949c-d067-8ef3-162431e28976</p>
+//               </div>
+//               <div className="flex items-center ml-16">
+//                 <div
+//                   className="bg-green-500 text-white py-1 px-3 rounded-full text-sm font-bold relative cursor-pointer"
+//                   onMouseEnter={() => setIsHovered(true)}
+//                   onMouseLeave={() => setIsHovered(false)}
+//                 >
+//                   Verified
+//                   {isHovered && <SignaturePopup />}
+//                 </div>
+//               </div>
+//             </div>
+//             <hr className="border-b border-gray-300" />
+//             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+//               <div>
+//                 <p>Model Number</p>
+//                 <p className="font-bold">{batteryData.ModelNumber}</p>
+//               </div>
+//               <div>
+//                 <p>Serial Number</p>
+//                 <p className="font-bold">{batteryData.SerialNumber}</p>
+//               </div>
+//               <div>
+//                 <p>Category</p>
+//                 <p className="font-bold">{batteryData.Category}</p>
+//               </div>
+//               <div>
+//                 <p>Weight</p>
+//                 <p className="font-bold">{batteryData?.["Weight(kg)"]} kg</p>
+//               </div>
+//               <div>
+//                 <p>Status</p>
+//                 <p className={`flex items-center gap-1 ${batteryData.Status === "Damaged" ? "text-red-600" : "text-green-600"}`}>
+//                   {batteryData.Status === "Damaged" ? "🔴 Damaged" : "🟢 Original"}
+//                 </p>
+//               </div>
+//               <div>
+//                 <p>Manufactured Date</p>
+//                 <p className="font-bold">{batteryData.ManufacturedDate}</p>
+//               </div>
+//               <div>
+//                 <p>Manufactured by</p>
+//                 <p className="font-bold">{batteryData.ManufacturedBy} <span className="text-xs">📍</span></p>
+//               </div>
+//             </div>
+//             <div className="flex flex-col items-end mr-24">
+//               <p><strong>Economic operator</strong></p>
+//               <div className="flex items-center">
+//                 <img src="src/assets/N2AT.png" alt="N2AT Logo" className="w-36 h-auto rounded-lg border-2 border-gray-300" />
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+        
+//         {/* Image Section */}
+//         <div className="flex flex-col items-center justify-center gap-2 mt-10 w-full md:w-5/12 ml-50">
+//           <img
+//             src="src/assets/battery_qr-removebg-preview.png"
+//             alt="Relevant Image"
+//             className="max-w-full h-auto"
+//           />
+//           <Link to="/passport-details" state={{ batteryData, carbonFootprintData, materialCompositionData }}>
+//             <button className="mt-10 bg-green-500 text-white border-2 border-green-500 rounded-md text-sm transition-all duration-300 hover:bg-white hover:text-green-500 py-2 px-3 w-full">
+//               View more about this passport
+//             </button>
+//           </Link>
+//         </div>
+//       </div>
+
+//       {/* Pie Chart Section */}
+//       <section className="w-full p-5 md:p-40 space-y-8"> {/* Added space-y-8 for spacing between items */}
+//         <div className="border border-gray-300 rounded-2xl">
+//           <div className="text-left line-height-1.8 mb-5 ml-5 text-xs text-gray-500">
+//             <h2>SUMMARY REPORT</h2>
+//           </div>
+//           <hr className="border-b-2 bg-gradient-to-r from-red-500 to-yellow-500 h-0.5" />
+//           <h4 className="text-lg mt-4">Original Power</h4>
+//           <br />
+//           <div className="carbonfootprint -mt-10">
+//             <PieChartComponent data={carbonFootprintData} />
+//           </div>
+//         </div>
+//         <PieGrid data={materialCompositionData} />
+//       </section>
+//     </section>
+//   );
+// };
+
+// export default Home;
+
+
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -725,7 +960,7 @@ const Home: React.FC = () => {
             {
               name: "Post Consumer Share",
               value: parseFloat(attributes["Nickel: Post Consumer Share"] || "0"),
-              color: "#28a745",
+              color: "#ffc107",
             },
             {
               name: "Pre Consumer Share",
@@ -735,14 +970,14 @@ const Home: React.FC = () => {
             {
               name: "Primary Material",
               value: parseFloat(attributes["Nickel: Primary Material"] || "0"),
-              color: "#BDC3C7",
+              color: "#28a745",
             },
           ],
           cobalt: [
             {
               name: "Post Consumer Share",
               value: parseFloat(attributes["Cobalt: Post Consumer Share"] || "0"),
-              color: "#28a745",
+              color: "#ffc107",
             },
             {
               name: "Pre Consumer Share",
@@ -752,14 +987,14 @@ const Home: React.FC = () => {
             {
               name: "Primary Material",
               value: parseFloat(attributes["Cobalt: Primary Material"] || "0"),
-              color: "#BDBDBD",
+              color: "#6c757d",
             },
           ],
           lithium: [
             {
               name: "Post Consumer Share",
               value: parseFloat(attributes["Lithium: Post Consumer Share"] || "0"),
-              color: "#28a745",
+              color: "#ffc107",
             },
             {
               name: "Pre Consumer Share",
@@ -769,14 +1004,14 @@ const Home: React.FC = () => {
             {
               name: "Primary Material",
               value: parseFloat(attributes["Lithium: Primary Material"] || "0"),
-              color: "#BDC3C7",
+              color: "#6c757d",
             },
           ],
           lead: [
             {
               name: "Post Consumer Share",
               value: parseFloat(attributes["Lead: Post Consumer Share"] || "0"),
-              color: "#28a745",
+              color: "#ffc107",
             },
             {
               name: "Pre Consumer Share",
@@ -786,7 +1021,7 @@ const Home: React.FC = () => {
             {
               name: "Primary Material",
               value: parseFloat(attributes["Lead: Primary Material"] || "0"),
-              color: "#BDC3C7",
+              color: "#6c757d",
             },
           ],
         };
@@ -800,17 +1035,17 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <section className="mt-52">
-      <div className="w-full max-w-6xl flex items-center mt-2 flex-wrap">
+    <section className="mt-32 ">
+      <div className="flex flex-col md:flex-row w-full max-w-6xl mx-auto items-start md:items-center mt-1 md:mt-12">
         {/* Battery Passport Section */}
-        <div className="flex-1 flex justify-center flex-wrap w-full max-w-6xl ml-40">
-          <div className="w-9/10 bg-white p-5 rounded-lg border border-gray-300  flex flex-col">
+        <div className="flex-1 flex justify-center flex-wrap w-full md:max-w-6xl md:ml-0 mb-6 md:mb-0 ">
+          <div className="bg-white p-5 rounded-lg border border-gray-300 flex flex-col w-full md:w-9/10">
             <div className="flex items-center mb-4 justify-between">
               <div>
                 <p className="text-sm text-gray-500 font-bold">Passport ID:</p>
                 <p className="text-lg font-bold">did:web:acme.battery.pass:0226151e-949c-d067-8ef3-162431e28976</p>
               </div>
-              <div className="flex items-center ml-16">
+              <div className="flex items-center">
                 <div
                   className="bg-green-500 text-white py-1 px-3 rounded-full text-sm font-bold relative cursor-pointer"
                   onMouseEnter={() => setIsHovered(true)}
@@ -824,38 +1059,38 @@ const Home: React.FC = () => {
             <hr className="border-b border-gray-300" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
               <div>
-                <p>Model Number</p>
+                <p className="font-bold">Model Number</p>
                 <p className="font-bold">{batteryData.ModelNumber}</p>
               </div>
               <div>
-                <p>Serial Number</p>
+                <p className="font-bold">Serial Number</p>
                 <p className="font-bold">{batteryData.SerialNumber}</p>
               </div>
               <div>
-                <p>Category</p>
+                <p className="font-bold">Category</p>
                 <p className="font-bold">{batteryData.Category}</p>
               </div>
               <div>
-                <p>Weight</p>
+                <p className="font-bold">Weight</p>
                 <p className="font-bold">{batteryData?.["Weight(kg)"]} kg</p>
               </div>
               <div>
-                <p>Status</p>
+                <p className="font-bold">Status</p>
                 <p className={`flex items-center gap-1 ${batteryData.Status === "Damaged" ? "text-red-600" : "text-green-600"}`}>
                   {batteryData.Status === "Damaged" ? "🔴 Damaged" : "🟢 Original"}
                 </p>
               </div>
               <div>
-                <p>Manufactured Date</p>
+                <p className="font-bold">Manufactured Date</p>
                 <p className="font-bold">{batteryData.ManufacturedDate}</p>
               </div>
               <div>
-                <p>Manufactured by</p>
+                <p className="font-bold">Manufactured by</p>
                 <p className="font-bold">{batteryData.ManufacturedBy} <span className="text-xs">📍</span></p>
               </div>
             </div>
-            <div className="flex flex-col items-end mr-24">
-              <p><strong>Economic operator</strong></p>
+            <div className="flex flex-col items-end">
+              <p className="font-bold"><strong>Economic operator</strong></p>
               <div className="flex items-center">
                 <img src="src/assets/N2AT.png" alt="N2AT Logo" className="w-36 h-auto rounded-lg border-2 border-gray-300" />
               </div>
@@ -864,14 +1099,14 @@ const Home: React.FC = () => {
         </div>
         
         {/* Image Section */}
-        <div className="flex flex-col items-center justify-center gap-2 mt-10 w-full md:w-5/12 ml-50">
+        <div className="flex flex-col items-center justify-center gap-2 mt-4 md:mt-0 w-full md:w-5/12">
           <img
             src="src/assets/battery_qr-removebg-preview.png"
             alt="Relevant Image"
             className="max-w-full h-auto"
           />
           <Link to="/passport-details" state={{ batteryData, carbonFootprintData, materialCompositionData }}>
-            <button className="mt-10 bg-green-500 text-white border-2 border-green-500 rounded-md text-sm transition-all duration-300 hover:bg-white hover:text-green-500 py-2 px-3 w-full">
+            <button className="mt-6 bg-green-500 text-white border-2 border-green-500 rounded-md text-sm transition-all duration-300 hover:bg-white hover:text-green-500 py-2 px-3 w-full">
               View more about this passport
             </button>
           </Link>
@@ -879,7 +1114,7 @@ const Home: React.FC = () => {
       </div>
 
       {/* Pie Chart Section */}
-      <section className="w-full p-5 md:p-40 space-y-8"> {/* Added space-y-8 for spacing between items */}
+      <section className="w-full p-5 md:p-10 space-y-8"> {/* Added space-y-8 for spacing between items */}
         <div className="border border-gray-300 rounded-2xl">
           <div className="text-left line-height-1.8 mb-5 ml-5 text-xs text-gray-500">
             <h2>SUMMARY REPORT</h2>
@@ -887,7 +1122,7 @@ const Home: React.FC = () => {
           <hr className="border-b-2 bg-gradient-to-r from-red-500 to-yellow-500 h-0.5" />
           <h4 className="text-lg mt-4">Original Power</h4>
           <br />
-          <div className="carbonfootprint">
+          <div className="carbonfootprint -mt-10">
             <PieChartComponent data={carbonFootprintData} />
           </div>
         </div>

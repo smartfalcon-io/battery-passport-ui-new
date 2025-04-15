@@ -55,8 +55,6 @@
 
 // export default CircularityContent;
 
-
-
 import React from "react";
 import { useLocation } from "react-router-dom";
 import PieChartComponent2 from "../components/PieChartComponent2";
@@ -78,17 +76,17 @@ const CircularityContent: React.FC = () => {
       </div>
       <hr className="mb-6" />
 
-      <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(150px,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(120px,1fr))] max-[486px]:grid-cols-1">
-        <div className="p-2 mb-[-30px]">
+      <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(150px,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(120px,1fr))]">
+        <div className="p-2 mb-4">
           <h4 className="text-[15px] font-bold text-gray-500">Separate collection</h4>
           <p className="text-black font-bold text-[16px]">
             Ensure that the waste battery is disposed of according to material composition
           </p>
         </div>
-        <div className="p-2 mb-[-30px]">
+        <div className="p-2 mb-4">
           <h4 className="text-[15px] font-bold text-gray-500">End of life information: Waste prevention</h4>
           <p className="text-black font-bold text-[16px]">
-            Don't dispose battery at normal waste
+            Don't dispose of battery in normal waste
           </p>
         </div>
       </div>
@@ -100,7 +98,7 @@ const CircularityContent: React.FC = () => {
         </span>
       </h3>
 
-      <div className="mt-6 flex md-flex-col gap-6">
+      <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <div className="pie-item">
           <PieChartComponent2 title="NICKEL" data={nickelData} />
         </div>

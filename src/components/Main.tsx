@@ -49,7 +49,7 @@ const Main: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col items-center w-screen py-16 px-8 mt-[-300px]">
+    <div className="flex flex-col items-center w-screen py-16 px-8 ">
       <p className="text-center text-gray-800 text-lg mb-5">
         {/* Authenticate with any of the below options */}
       </p>

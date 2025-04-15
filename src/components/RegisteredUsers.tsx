@@ -117,7 +117,7 @@ const RegisteredUser: React.FC = () => {
   };
 
   return (
-    <div className="flex justify-center items-center w-full min-h-screen p-5">
+    <div className="flex justify-center items-center w-full min-h-screen p-5 m-0 lg:ml-[350px]">
       <div className="bg-white p-8 rounded-lg shadow-lg text-center w-full max-w-sm">
         <div className="flex justify-center mb-4 text-green-500">
           <h2>BATTERY PASSPORT</h2>
